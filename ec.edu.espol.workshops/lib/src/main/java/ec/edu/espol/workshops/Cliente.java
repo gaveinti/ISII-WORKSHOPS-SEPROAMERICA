@@ -43,6 +43,26 @@ public class Cliente {
 	public void setEstadoCivil(MaritalStatus maritalStatus) {
 		this.maritalStatus=maritalStatus;
 	}
+	
+public int calculate(int result, int base) {
+		
+		if (this.getSexo().equals(Sex.Male) && this.getEdad()<25 && !this.getMaritalStatus().equals(MaritalStatus.Single) ) {
+			result = base+ 1500;
+		}
+		
+		if (this.getSexo().equals(Sex.Female) || this.getMaritalStatus().equals(MaritalStatus.Married )) {
+			result = base - 200;
+		}
+		if ( this.getEdad()>45 && this.getEdad()<65 ) {
+			result = base - 100;
+		}
+		
+		if (  this.getEdad()>80 ) {
+			result = -1;
+		} 
+		
+		return result;
+	}
 
 	@Override
 	public String toString() {
