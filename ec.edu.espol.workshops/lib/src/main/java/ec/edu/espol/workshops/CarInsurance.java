@@ -3,9 +3,9 @@ import java.util.Scanner;
 public class CarInsurance {
 	
 	static int base = 500;
+	int result = 0;
 	
-	
-	static Cliente cliente = new Cliente();
+	Cliente cliente = new Cliente();
 	
 	
 	public static boolean haveLicense(char entrada) {
@@ -21,34 +21,15 @@ public class CarInsurance {
 	}
 	
 	public static boolean haveValidCivilStatus(String entrada) {
-		return entrada.contentEquals("single") || entrada.contentEquals("married");
+		return entrada.contentEquals("Single") || entrada.contentEquals("Married");
 	}
 	
 	
 	
-<<<<<<< HEAD
 	/*public static void getData(){
 		Scanner entrada = new Scanner(System.in);
-=======
-	public static void getData( ){
-		int age ;
-		char sex;
-		String maritalStatus;
-		Scanner sc = new Scanner(System.in);
->>>>>>> 26243e5c48bcb9a297460b8cc2d92d53ae7d025e
 		System.out.println("Ingrese edad:");
-		do {
-		    System.out.println("Please enter a positive number!");
-		    while (!sc.hasNextInt()) {
-		        System.out.println("That's not a number!");
-		        sc.next(); // this is important!
-		    }
-		    age = sc.nextInt();
-		    
-		} while (age <= 0);
-		cliente.setAge(age);
 		
-<<<<<<< HEAD
 	}*/
 	
 	
@@ -56,50 +37,21 @@ public class CarInsurance {
 		
 		if (this.cliente.getSexo().equals(Sex.Male) && this.cliente.getEdad()<25 && !this.cliente.getMaritalStatus().equals(MaritalStatus.Single) ) {
 			this.result = base+ 1500;
-=======
-		do {
-		    System.out.println("Please enter F to Female or M to Male");
-		    sex = Character.toUpperCase(sc.next().charAt(0)); 
-		    
-		} while (!haveValidSexEntry(sex));
-		if (sex =='F') {cliente.setSexo(Sex.Female);}
-		if (sex =='M') {cliente.setSexo(Sex.Male);}
-		do {
-		    System.out.println("Please enter Marital status, married or single");
-		    maritalStatus = sc.nextLine().toLowerCase(); 
-		   
-		} while (!haveValidCivilStatus(maritalStatus));
-		
-		if (maritalStatus.equals("married")) {cliente.setEstadoCivil(MaritalStatus.married);}
-		if (maritalStatus.equals("single")) {cliente.setEstadoCivil(MaritalStatus.single);}
-	}
-	
-	
-	public static void  calculate() {
-		int result = base;
-		if (cliente.getSexo().equals(Sex.Male) &&cliente.getEdad()<25 && !cliente.getMaritalStatus().equals(MaritalStatus.single) ) {
-			result += 1500;
->>>>>>> 26243e5c48bcb9a297460b8cc2d92d53ae7d025e
 		}
 		
-		if (cliente.getSexo().equals(Sex.Female) || cliente.getMaritalStatus().equals(MaritalStatus.married )) {
-			result -= 200;
+		if (this.cliente.getSexo().equals(Sex.Female) || this.cliente.getMaritalStatus().equals(MaritalStatus.Married )) {
+			this.result = base - 200;
 		}
-		if ( cliente.getEdad()>45 && cliente.getEdad()<65 ) {
-			result -= 100;
+		if ( this.cliente.getEdad()>45 && this.cliente.getEdad()<65 ) {
+			this.result = base - 100;
 		}
 		
-		if ( cliente.getEdad()>80 ) {
-			result = -1;
+		if (  this.cliente.getEdad()>80 ) {
+			this.result = -1;
 		} 
-<<<<<<< HEAD
 		
 		return this.result;
 	}*/
-=======
-		System.out.println(result);
-	}
->>>>>>> 26243e5c48bcb9a297460b8cc2d92d53ae7d025e
 	
 	public static void main(String []args){
 		
@@ -169,22 +121,8 @@ public class CarInsurance {
 		
 		
 		
-<<<<<<< HEAD
 		
 		
-=======
-		System.out.println("Bienvenido al sistema de calculo de la prima del seguro");
-		System.out.println("Tiene licencia valida de conducir?(s/n)");
-		char license=entry.next().charAt(0);
-		if(license == 'n') {
-			System.out.println("No podemos otorgar un seguro, gracias por su preferencia!");
-			return;
-		}
-		getData();
-		System.out.println(cliente);
-		System.out.println("El costo del seguro seria de: ");
-		calculate();
->>>>>>> 26243e5c48bcb9a297460b8cc2d92d53ae7d025e
 	}
 	
 	
