@@ -46,11 +46,11 @@ public class Cliente {
 	
 public int calculate(int result, int base) {
 		
-		if (this.getSexo().equals(Sex.Male) && this.getEdad()<25 && !this.getMaritalStatus().equals(MaritalStatus.Single) ) {
+		if (this.getSexo().equals(Sex.Male) && this.getEdad()<25 && !this.getMaritalStatus().equals(MaritalStatus.single) ) {
 			result = base+ 1500;
 		}
 		
-		if (this.getSexo().equals(Sex.Female) || this.getMaritalStatus().equals(MaritalStatus.Married )) {
+		if (this.getSexo().equals(Sex.Female) || this.getMaritalStatus().equals(MaritalStatus.married )) {
 			result = base - 200;
 		}
 		if ( this.getEdad()>45 && this.getEdad()<65 ) {
