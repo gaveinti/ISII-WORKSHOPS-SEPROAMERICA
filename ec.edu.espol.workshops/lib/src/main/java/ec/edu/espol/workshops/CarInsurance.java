@@ -83,7 +83,8 @@ public class CarInsurance {
 			
 			
 			//Validaciones de entrada
-			if(haveValidEntry(license) && haveValidSexEntry(sexo) && haveValidCivilStatus(estado) && haveLicense(license)) {
+			if(haveValidEntry(license) && haveValidSexEntry(sexo) && haveValidCivilStatus(estado) 
+					&& haveLicense(license)) {
 			
 				//Validar si es single o married y crear el objeto
 				if(estado.equals(m)) {
@@ -102,7 +103,7 @@ public class CarInsurance {
 				}
 				
 				
-				cliente.setAge(edad);
+				cliente.setEdad(edad);
 				cliente.setEstadoCivil(maritalCliente);
 				cliente.setSexo(sexoCliente);
 				
@@ -116,14 +117,6 @@ public class CarInsurance {
 			}else {
 				System.out.println("Datos no válidos, intente de nuevo ");
 			}
-			
 		}
-		
-		
-		
-		
-		
-	}
-	
-	
+	}	
 }
