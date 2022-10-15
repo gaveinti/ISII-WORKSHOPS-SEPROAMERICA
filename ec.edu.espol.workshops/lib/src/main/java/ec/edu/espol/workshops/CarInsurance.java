@@ -25,34 +25,6 @@ public class CarInsurance {
 	}
 	
 	
-	
-	/*public static void getData(){
-		Scanner entrada = new Scanner(System.in);
-		System.out.println("Ingrese edad:");
-		
-	}*/
-	
-	
-	/*public int calculate() {
-		
-		if (this.cliente.getSexo().equals(Sex.Male) && this.cliente.getEdad()<25 && !this.cliente.getMaritalStatus().equals(MaritalStatus.Single) ) {
-			this.result = base+ 1500;
-		}
-		
-		if (this.cliente.getSexo().equals(Sex.Female) || this.cliente.getMaritalStatus().equals(MaritalStatus.Married )) {
-			this.result = base - 200;
-		}
-		if ( this.cliente.getEdad()>45 && this.cliente.getEdad()<65 ) {
-			this.result = base - 100;
-		}
-		
-		if (  this.cliente.getEdad()>80 ) {
-			this.result = -1;
-		} 
-		
-		return this.result;
-	}*/
-	
 	public static void main(String []args){
 		
 		int base = 500;
@@ -103,7 +75,7 @@ public class CarInsurance {
 				}
 				
 				
-				cliente.setEdad(edad);
+				cliente.setAge(edad);
 				cliente.setEstadoCivil(maritalCliente);
 				cliente.setSexo(sexoCliente);
 				

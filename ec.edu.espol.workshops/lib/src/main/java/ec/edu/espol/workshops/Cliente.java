@@ -44,7 +44,7 @@ public class Cliente {
 		this.maritalStatus=maritalStatus;
 	}
 	
-public int calculate(int result, int base) {
+	public int calculate(int result, int base) {
 		
 		if (this.getSexo().equals(Sex.Male) && this.getEdad()<25 && !this.getMaritalStatus().equals(MaritalStatus.single) ) {
 			result = base+ 1500;
