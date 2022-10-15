@@ -59,7 +59,7 @@ public class CarInsurance {
 		int result = 0;
 		
 		Cliente cliente = new Cliente();
-		MaritalStatus maritalCliente = MaritalStatus.Married;
+		MaritalStatus maritalCliente = MaritalStatus.married;
 		Sex sexoCliente = Sex.Female;
 		
 		String m = "Married";
@@ -87,10 +87,10 @@ public class CarInsurance {
 			
 				//Validar si es single o married y crear el objeto
 				if(estado.equals(m)) {
-					maritalCliente = MaritalStatus.Married;
+					maritalCliente = MaritalStatus.married;
 				}
 				if(estado.equals(s)) {
-					maritalCliente = MaritalStatus.Single;
+					maritalCliente = MaritalStatus.single;
 				}
 				
 				//Validar si es male o female y crear el objeto
