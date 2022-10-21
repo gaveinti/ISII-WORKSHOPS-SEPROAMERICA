@@ -6,11 +6,10 @@ public class Cliente {
 	private Sex sex;
 	private MaritalStatus maritalStatus;
 	
-	/**
-	 * 
-	 */
+	//Default constructor
 	public Cliente(){}
 	
+	//Object constructor
 	public Cliente(Cliente cliente) {
 		this.age= cliente.age;
 		this.sex= cliente.sex;
@@ -45,23 +44,25 @@ public class Cliente {
 	}
 	
 	public int calculate(int result, int base) {
+		int newResult = 0;
+		boolean opcionCuatro = this.getEdad()>80;
 		
 		if (this.getSexo().equals(Sex.Male) && this.getEdad()<25 && !this.getMaritalStatus().equals(MaritalStatus.single) ) {
-			result = base+ 1500;
+			newResult = base+ 1500;
 		}
 		
 		if (this.getSexo().equals(Sex.Female) || this.getMaritalStatus().equals(MaritalStatus.married )) {
-			result = base - 200;
+			newResult = base - 200;
 		}
 		if ( this.getEdad()>45 && this.getEdad()<65 ) {
-			result = base - 100;
+			newResult = base - 100;
 		}
 		
-		if (  this.getEdad()>80 ) {
-			result = -1;
+		if (opcionCuatro) {
+			newResult = -1;
 		} 
 		
-		return result;
+		return newResult;
 	}
 
 	@Override

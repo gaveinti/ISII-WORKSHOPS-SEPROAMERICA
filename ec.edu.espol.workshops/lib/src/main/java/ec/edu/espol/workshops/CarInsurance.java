@@ -30,6 +30,7 @@ public class CarInsurance {
 		int base = 500;
 		int result = 0;
 		
+		
 		Cliente cliente = new Cliente();
 		MaritalStatus maritalCliente = MaritalStatus.married;
 		Sex sexoCliente = Sex.Female;
@@ -53,6 +54,8 @@ public class CarInsurance {
 			System.out.println("Ingrese su estado marital:(Married para casado o Single para soltero)");
 			String estado = entry.nextLine();
 			
+			//Condiciones
+			boolean masculinoCondicion = (sexo == 'M');
 			
 			//Validaciones de entrada
 			if(haveValidEntry(license) && haveValidSexEntry(sexo) && haveValidCivilStatus(estado) 
@@ -67,7 +70,7 @@ public class CarInsurance {
 				}
 				
 				//Validar si es male o female y crear el objeto
-				if(sexo == 'M') {
+				if(masculinoCondicion) {
 					sexoCliente = Sex.Male;
 				}
 				if(sexo == 'F') {
@@ -87,7 +90,7 @@ public class CarInsurance {
 				
 				exit = true;
 			}else {
-				System.out.println("Datos no válidos, intente de nuevo ");
+				System.out.println("Datos no vï¿½lidos, intente de nuevo ");
 			}
 		}
 	}	
