@@ -2,9 +2,9 @@ package ec.edu.espol.workshops;
 
 public class Cliente {
 	
-	private int age;
-	private Sex sex;
-	private MaritalStatus maritalStatus;
+	private  int age;
+	private  Sex sex;
+	private  MaritalStatus maritalStatus;
 	
 	//Default constructor
 	public Cliente(){}
@@ -22,7 +22,7 @@ public class Cliente {
 		this.sex=sex;
 		this.maritalStatus=status;
 	}
-	
+	//
 	public int getEdad() {
 		return this.age;
 	}
@@ -32,7 +32,10 @@ public class Cliente {
 	public MaritalStatus getMaritalStatus() {
 		return this.maritalStatus;
 	}
-
+/*
+ * setter 
+ * @autor Bryan Loor
+*/
 	public void setAge(int age) {
 		this.age=age;
 	}

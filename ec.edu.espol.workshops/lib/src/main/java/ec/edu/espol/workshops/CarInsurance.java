@@ -2,8 +2,8 @@ package ec.edu.espol.workshops;
 import java.util.Scanner;
 public class CarInsurance {
 	
-	static int base = 500;
-	int result = 0;
+	static final int base = 500;
+	int result;
 	
 	Cliente cliente = new Cliente();
 	
@@ -40,8 +40,6 @@ public class CarInsurance {
 
 		Scanner entry = new Scanner(System.in);
 		boolean exit=false;
-		int numeroValido = 1;
-		
 		while(exit == false) {
 			System.out.println("Bienvenido al sistema de calculo de la prima del seguro");
 			System.out.println("Tiene licencia valida de conducir?(s/n)");
@@ -53,7 +51,6 @@ public class CarInsurance {
 			entry.nextLine();
 			System.out.println("Ingrese su estado marital:(Married para casado o Single para soltero)");
 			String estado = entry.nextLine();
-			
 			//Condiciones
 			boolean masculinoCondicion = (sexo == 'M');
 			
