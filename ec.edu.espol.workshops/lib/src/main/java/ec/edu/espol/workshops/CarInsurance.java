@@ -2,11 +2,7 @@ package ec.edu.espol.workshops;
 import java.util.Scanner;
 public class CarInsurance {
 	
-	static int base = 500;
-	int result = 0;
-	
 	Cliente cliente = new Cliente();
-	
 	
 	public static boolean haveLicense(char entrada) {
 		return entrada == 's';
