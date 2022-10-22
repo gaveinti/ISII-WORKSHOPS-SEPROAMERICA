@@ -2,11 +2,8 @@ package ec.edu.espol.workshops;
 import java.util.Scanner;
 public class CarInsurance {
 	
-	static final int base = 500;
-	int result;
 	
 	Cliente cliente = new Cliente();
-	
 	
 	public static boolean haveLicense(char entrada) {
 		return entrada == 's';
@@ -30,7 +27,6 @@ public class CarInsurance {
 		int base = 500;
 		int result = 0;
 		
-		
 		Cliente cliente = new Cliente();
 		MaritalStatus maritalCliente = MaritalStatus.married;
 		Sex sexoCliente = Sex.Female;
@@ -40,6 +36,8 @@ public class CarInsurance {
 
 		Scanner entry = new Scanner(System.in);
 		boolean exit=false;
+		int numeroValido = 1;
+		
 		while(exit == false) {
 			System.out.println("Bienvenido al sistema de calculo de la prima del seguro");
 			System.out.println("Tiene licencia valida de conducir?(s/n)");
@@ -51,8 +49,7 @@ public class CarInsurance {
 			entry.nextLine();
 			System.out.println("Ingrese su estado marital:(Married para casado o Single para soltero)");
 			String estado = entry.nextLine();
-			//Condiciones
-			boolean masculinoCondicion = (sexo == 'M');
+			
 			
 			//Validaciones de entrada
 			if(haveValidEntry(license) && haveValidSexEntry(sexo) && haveValidCivilStatus(estado) 
@@ -67,11 +64,11 @@ public class CarInsurance {
 				}
 				
 				//Validar si es male o female y crear el objeto
-				if(masculinoCondicion) {
+				if(sexo == 'M') {
 					sexoCliente = Sex.Male;
 				}
 				if(sexo == 'F') {
-					sexoCliente = Sex.Female;
+					sexoCliente = Sex.Female;	
 				}
 				
 				
@@ -87,7 +84,7 @@ public class CarInsurance {
 				
 				exit = true;
 			}else {
-				System.out.println("Datos no vï¿½lidos, intente de nuevo ");
+				System.out.println("Datos no válidos, intente de nuevo ");
 			}
 		}
 	}	
