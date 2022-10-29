@@ -36,7 +36,7 @@ public class CarInsurance {
 
 		Scanner entry = new Scanner(System.in);
 		boolean exit=false;
-		int numeroValido = 1;
+		int numeroinValido = -1;
 		
 		while(exit == false) {
 			System.out.println("Bienvenido al sistema de calculo de la prima del seguro");
@@ -64,10 +64,10 @@ public class CarInsurance {
 				}
 				
 				//Validar si es male o female y crear el objeto
-				if(sexo == 'M') {
+				if(sexo == 'M' || sexo=='m') {
 					sexoCliente = Sex.Male;
 				}
-				if(sexo == 'F') {
+				if(sexo == 'F' || sexo == 'f') {
 					sexoCliente = Sex.Female;	
 				}
 				
@@ -84,7 +84,7 @@ public class CarInsurance {
 				
 				exit = true;
 			}else {
-				System.out.println("Datos no válidos, intente de nuevo ");
+				System.out.println(numeroinValido);
 			}
 		}
 	}	

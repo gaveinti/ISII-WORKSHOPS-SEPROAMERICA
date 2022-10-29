@@ -42,30 +42,29 @@ public class Cliente {
 	public void setSexo(Sex sex) {
 		this.sex=sex;
 	}
-	public void setEstadoCivil(MaritalStatus maritalStatus) {
+public void setEstadoCivil (MaritalStatus maritalStatus) {
 		this.maritalStatus=maritalStatus;
 	}
 	
 	public int calculate(int result, int base) {
-		int newResult = 0;
-		boolean opcionCuatro = this.getEdad()>80;
+		result=base;
 		
-		if (this.getSexo().equals(Sex.Male) && this.getEdad()<25 && !this.getMaritalStatus().equals(MaritalStatus.single) ) {
-			newResult = base+ 1500;
+		if (this.getSexo().equals(Sex.Male) && this.getEdad()<25 && this.getMaritalStatus().equals(MaritalStatus.single) ) {
+			result += 1500;
 		}
 		
 		if (this.getSexo().equals(Sex.Female) || this.getMaritalStatus().equals(MaritalStatus.married )) {
-			newResult = base - 200;
+			result -= 200;
 		}
-		if ( this.getEdad()>45 && this.getEdad()<65 ) {
-			newResult = base - 100;
+		if ( this.getEdad()>=45 && this.getEdad()<65 ) {
+			result -= 100;
 		}
 		
-		if (opcionCuatro) {
-			newResult = -1;
+		if (this.getEdad()>80 || this.getEdad()<=0) {
+			result = -1;
 		} 
 		
-		return newResult;
+		return result;
 	}
 
 	@Override
