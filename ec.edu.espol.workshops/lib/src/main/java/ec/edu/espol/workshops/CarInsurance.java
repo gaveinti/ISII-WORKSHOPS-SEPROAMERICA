@@ -2,7 +2,7 @@ package ec.edu.espol.workshops;
 import java.util.Scanner;
 public class CarInsurance {
 	
-	
+	/*Comentario*/
 	Cliente cliente = new Cliente();
 	
 	public static boolean haveLicense(char entrada) {
