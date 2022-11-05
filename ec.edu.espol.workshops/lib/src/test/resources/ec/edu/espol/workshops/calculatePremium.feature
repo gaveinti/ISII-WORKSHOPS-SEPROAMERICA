@@ -29,7 +29,7 @@ age   |Asnwer
 22    |Variable
 
 
-Feature: Calculate the insurance prime for a customer 3.
+Feature: Calculate the insurance prime for a customer  3.
 Scenario: The customer si an adult person.
 GIVEN The customer is an adult person.
 WHEN It’s age is 50
@@ -46,12 +46,16 @@ age>80 or age<10       |-1
 
 
 Feature: Calculate the insurance prime for a customer 4.
-Scenario:
-GIVEN
-WHEN
-THEN
+Scenario: The customer is male, not married and younger than 25 years old
+GIVEN It's age is between 18and 24, male and single.
+WHEN Ask for the sex.
+Ask for the marital status and ask for age.
+THEN add $1500 to the base premium
 Scenario Outline:
-GIVEN
-WHEN
-THEN
+GIVEN The age is <age>, the maital Staus is <MatStatus> and the sex is <sex>
+WHEN Ask for the sex. Ask for the marital status and ask for age.
+THEN Add <answer> for the base premium
 Examples:
+sex     |matStatus   |age       |answer
+male    |Single      |22        |+$1500
+male    |married     |47        |-$300
