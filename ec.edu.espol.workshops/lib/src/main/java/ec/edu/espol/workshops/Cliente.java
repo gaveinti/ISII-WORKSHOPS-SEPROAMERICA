@@ -60,7 +60,7 @@ public void setEstadoCivil (MaritalStatus maritalStatus) {
 			result -= 100;
 		}
 		
-		if (this.getEdad()>80 || this.getEdad()<=0) {
+		if (this.getEdad()>80 || this.getEdad()<=0 || this.getEdad()<18 ) {
 			result = -1;
 		} 
 		
