@@ -1,5 +1,7 @@
 package ec.edu.espol.workshops;
 import java.util.Scanner;
+
+
 public class CarInsurance {
 	
 	
@@ -19,6 +21,17 @@ public class CarInsurance {
 	
 	public static boolean haveValidCivilStatus(String entrada) {
 		return entrada.contentEquals("Single") || entrada.contentEquals("Married");
+	}
+	
+
+	public static boolean isInteger(String cadena) {
+	    int v;
+	    try {
+	      v=Integer.parseInt(cadena);
+	      return true;
+	    } catch (NumberFormatException ex) {
+	       return false;
+	    }
 	}
 	
 	
@@ -43,7 +56,15 @@ public class CarInsurance {
 			System.out.println("Tiene licencia valida de conducir?(s/n)");
 			char license=entry.next().charAt(0);
 			System.out.println("Ingrese edad:");
-			int edad = entry.nextInt();
+			String ingresoEdad = entry.nextLine();
+			
+			while (isInteger(ingresoEdad) == false) {
+                System.out.println (" Age is wrong.");
+                System.out.println("Ingrese edad:");
+    			ingresoEdad = entry.nextLine();
+			}
+			
+			int edad = Integer.parseInt(ingresoEdad);
 			System.out.println("Ingrese su sexo:(M para Masculino/F para femenino)");
 			char sexo=entry.next().charAt(0);
 			entry.nextLine();
