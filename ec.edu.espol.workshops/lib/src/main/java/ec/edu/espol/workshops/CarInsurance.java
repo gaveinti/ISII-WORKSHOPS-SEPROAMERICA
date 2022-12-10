@@ -37,7 +37,7 @@ public class CarInsurance {
 	
 	public static void main(String []args){
 		
-		int base = 500;
+		int base = 600;
 		int result = 0;
 		
 		Cliente cliente = new Cliente();
