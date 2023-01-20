@@ -49,19 +49,33 @@ public void setEstadoCivil (MaritalStatus maritalStatus) {
 	public int calculate(int result, int base) {
 		result=base;
 		
+		if (this.getMaritalStatus().equals(MaritalStatus.married ) && this.getEdad()>30 && this.getEdad()<60) {
+			result -= 100;
+			System.out.println("opcion 1");
+		}
+		
+		if (this.getMaritalStatus().equals(MaritalStatus.single) && this.getSexo().equals(Sex.Female) && this.getEdad()>60) {
+			result -= 50;
+			System.out.println("opcion 2");
+		}
+		
 		if (this.getSexo().equals(Sex.Male) && this.getEdad()<25 && this.getMaritalStatus().equals(MaritalStatus.single) ) {
 			result += 1500;
+			System.out.println("opcion 3");
 		}
 		
 		if (this.getSexo().equals(Sex.Female) || this.getMaritalStatus().equals(MaritalStatus.married )) {
 			result -= 200;
+			System.out.println("opcion 4");
 		}
 		if ( this.getEdad()>=45 && this.getEdad()<65 ) {
 			result -= 100;
+			System.out.println("opcion 5");
 		}
 		
 		if (this.getEdad()>80 || this.getEdad()<=0 || this.getEdad()<18 ) {
 			result = -1;
+			System.out.println("opcion 6");
 		} 
 		
 		return result;

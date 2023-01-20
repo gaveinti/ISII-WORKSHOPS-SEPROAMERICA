@@ -109,4 +109,41 @@ public class CarInsurance {
 			}
 		}
 	}	
+	
+	int calcular_Car_Insurance(String licencia, int edad, char sexo, String estado_Marital){
+		int base = 500;
+		int result = 0;
+		Cliente cliente = new Cliente();
+		MaritalStatus maritalCliente = MaritalStatus.married;
+		Sex sexoCliente = Sex.Female;
+		if(licencia == "s") {
+			cliente.setAge(edad);
+			
+			//Validar si es male o female y crear el objeto
+			if(sexo == 'M' || sexo=='m') {
+				sexoCliente = Sex.Male;
+			}
+			if(sexo == 'F' || sexo == 'f') {
+				sexoCliente = Sex.Female;	
+			}
+			
+			if(estado_Marital.equals("m")) {
+				maritalCliente = MaritalStatus.married;
+			}
+			if(estado_Marital.equals("s")) {
+				maritalCliente = MaritalStatus.single;
+			}
+			cliente.setEstadoCivil(maritalCliente);
+			cliente.setSexo(sexoCliente);
+			result = cliente.calculate(result, base);
+			return result;
+		}else {
+			result = -1;
+			return result;
+		}
+	
+	}
+	
+	
+	
 }
