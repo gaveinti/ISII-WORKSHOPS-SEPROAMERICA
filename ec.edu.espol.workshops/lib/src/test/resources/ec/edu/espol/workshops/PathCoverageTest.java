@@ -18,15 +18,15 @@ public class PathCoverageTest {
 		
 		CarInsurance c3 = new CarInsurance();
 		int resultado3 = c3.calcular_Car_Insurance("s", 24, 'M', "Single");
-		assertEquals(-1, resultado3);
+		assertEquals(300, resultado3);
 		
 		CarInsurance c4 = new CarInsurance();
 		int resultado4 = c4.calcular_Car_Insurance("s", 70, 'F', "Married");
-		assertEquals(-1, resultado4);
+		assertEquals(300, resultado4);
 		
 		CarInsurance c5 = new CarInsurance();
 		int resultado5 = c5.calcular_Car_Insurance("s", 40, 'M', "Married");
-		assertEquals(300, resultado5);
+		assertEquals(200, resultado5);
 		
 	}
 

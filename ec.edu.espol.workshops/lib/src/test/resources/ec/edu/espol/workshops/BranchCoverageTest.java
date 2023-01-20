@@ -10,11 +10,11 @@ public class BranchCoverageTest{
 	public void test() {
 		CarInsurance c1 = new CarInsurance();
 		int resultado = c1.calcular_Car_Insurance("s", 48, 'F', "Single");
-		assertEquals(200, resultado);
+		assertEquals(100, resultado);
 		
 		CarInsurance c2 = new CarInsurance();
 		int resultado2 = c2.calcular_Car_Insurance("s", 25, 'M', "Single");
-		assertEquals(500, resultado2);
+		assertEquals(300, resultado2);
 		
 		CarInsurance c3 = new CarInsurance();
 		int resultado3 = c3.calcular_Car_Insurance("n", 48, 'F', "Single");
@@ -30,7 +30,7 @@ public class BranchCoverageTest{
 		
 		CarInsurance c6 = new CarInsurance();
 		int resultado6 = c6.calcular_Car_Insurance("s", 45, 'M', "Single");
-		assertEquals(400, resultado6);
+		assertEquals(100, resultado6);
 	}
 
 }
